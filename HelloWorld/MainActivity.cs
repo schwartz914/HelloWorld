@@ -9,11 +9,12 @@ using Android.OS;
 namespace HelloWorld {
     [Activity(Label = "HelloWorld", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity {
-        int count = 1;
+        //int count = 1;
+        int value = 0;
 
         protected override void OnCreate(Bundle bundle) {
             base.OnCreate(bundle);
-
+            
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
@@ -22,8 +23,9 @@ namespace HelloWorld {
             Button button1 = FindViewById<Button>(Resource.Id.btnClick);
             TextView txtview1 = FindViewById<TextView>(Resource.Id.txtvShow);
             //button1.Click += delegate { button1.Text = string.Format("{0} clicks!", count++); };
-
-            button1.Click += delegate { txtview1.Text = "Clicked"; };
+            //value++;
+            button1.Click += delegate { txtview1.Text = string.Format ("{0} Clicks", value++); };
+            //Hey look at this. I changed it.
         }
     }
 }
